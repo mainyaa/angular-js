@@ -61,7 +61,7 @@ angular.module('pubnub.angular.service', [])
         if event.uuids
           c.each event.uuids, (uuid) ->
             c['_presence'][channel] ||= []
-            c['_presence'][channel].push uuid if c['_presence'][channel].indexOf(uuid) < 0 
+            c['_presence'][channel].push uuid if c['_presence'][channel].indexOf(uuid) < 0
         else
           if event.uuid && event.action
             c['_presence'][channel] ||= []
@@ -100,7 +100,8 @@ angular.module('pubnub.angular.service', [])
       delete $rootScope.$$listeners[c.ngPrsEv(args.channel)]
       c.jsapi.unsubscribe(args)
 
-    c.ngPublish = -> c['_instance']['publish'].apply c['_instance'], arguments
+    c.ngPublish = ->
+      c['_instance']?['publish'].apply c['_instance'], arguments
 
     c.ngHistory = (args) ->
       args.callback = c._ngFireMessages args.channel

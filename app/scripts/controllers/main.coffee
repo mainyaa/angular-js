@@ -53,7 +53,7 @@ angular.module('PubNubAngularApp')
 
       # wait a tiny bit before selecting the channel to allow time for the presence
       # handlers to register
-      setTimeout ->
+      $scope.timeoutID = setTimeout () ->
         $scope.subscribe channel
         $scope.showCreate = false
       , 100
