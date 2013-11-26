@@ -1,5 +1,6 @@
 # Project Specific(User Edit)
 
+.tmp
 app/components
 dist/components
 
