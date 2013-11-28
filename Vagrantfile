@@ -10,25 +10,38 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :forwarded_port, guest: 9080, host: 9080
   config.vm.network :forwarded_port, guest: 9081, host: 9081
-  config.vm.synced_folder "./", "/vagrant_data", :owner=> 'vagrant', :group=>'www-data', :mount_options => ['dmode=775','fmode=775']
+  
+  config.vm.synced_folder "./", "/vagrant_data", :owner=> 'vagrant', :group=>'vagrant', :mount_options => ['dmode=775','fmode=775']
+  
+  
+  # provision some standard packages
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = ["cookbooks", "~/.berkshelf/cookbooks/"]
+    chef.log_level = :debug
+    chef.json = {
+        "rvm" => {
+          "rubies"  => ["1.9.2"],
+          "global_gems" => [
+              { 'name' => 'bundler' },
+          ]
+        }
+      }
+  end
 
+  # install node, npm, and our packages
   config.vm.provision :shell, :inline => <<-EOS
     sudo apt-get update
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ruby
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y rubygems
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y npm
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y git
-
+    sudo gem update
 
     cd /vagrant_data
-    sudo npm install -g grunt-cli
-    sudo npm install -g bower
-    sudo npm install -g yo
-    sudo npm install -g karma
-    sudo gem install haml
-    sudo npm install
-    sudo grunt server
+    npm install -g grunt-cli
+    npm install -g bower
+    npm install -g yo
+    npm install -g karma
+    sudo bundle install haml
+    npm install
+    bower install
+    grunt server
 
     echo 'please open http://localhost:8080/'
     
