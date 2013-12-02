@@ -8,6 +8,7 @@ WIP
 1. `git clone`
 1. `cd pubnub-angular-js`
 1. `gem install haml`
+1. `gem install compass`
 1. `npm install`
 1. `bower install`
 1. `grunt server`
