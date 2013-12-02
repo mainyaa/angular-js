@@ -344,7 +344,8 @@ module.exports = function (grunt) {
     'coffee:dist',
     'compass:server',
     'livereload-start',
-    'connect:devserver',
+    'connect:livereload',
+    'open',
     'watch'
   ]);
 
