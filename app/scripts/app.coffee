@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('PubNubAngularApp', ["pubnub.angular.service"])
+App = window.App = angular.module('PubNubAngularApp', ["pubnub.angular.service"])
   .config ($routeProvider) ->
     $routeProvider
       .when '/join',
