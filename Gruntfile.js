@@ -111,10 +111,10 @@ module.exports = function (grunt) {
       options : {
         stdout: true
       },
-      npm_install: {
+      npminstall: {
         command: 'npm install'
       },
-      bower_install: {
+      bowerinstall: {
         command: './node_modules/.bin/bower install'
       }
     },
@@ -146,7 +146,7 @@ module.exports = function (grunt) {
         autoWatch: false,
         singleRun: true
       },
-      unit_auto: {
+      unitauto: {
         configFile: './test/karma-unit.conf.js'
       },
       midway: {
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
         autoWatch: false,
         singleRun: true
       },
-      midway_auto: {
+      midwayauto: {
         configFile: './test/karma-midway.conf.js'
       },
       e2e: {
@@ -162,7 +162,7 @@ module.exports = function (grunt) {
         autoWatch: false,
         singleRun: true
       },
-      e2e_auto: {
+      e2eauto: {
         configFile: './test/karma-e2e.conf.js'
       }
     },
@@ -386,12 +386,12 @@ module.exports = function (grunt) {
 
   //keeping these around for legacy use
   grunt.registerTask('autotest', ['autotest:unit']);
-  grunt.registerTask('autotest:unit', ['connect:testserver','karma:unit_auto']);
-  grunt.registerTask('autotest:midway', ['connect:testserver','karma:midway_auto']);
-  grunt.registerTask('autotest:e2e', ['connect:testserver','karma:e2e_auto']);
+  grunt.registerTask('autotest:unit', ['connect:testserver','karma:unitauto']);
+  grunt.registerTask('autotest:midway', ['connect:testserver','karma:midwayauto']);
+  grunt.registerTask('autotest:e2e', ['connect:testserver','karma:e2eauto']);
 
   //installation-related
-  grunt.registerTask('install', ['shell:npm_install','shell:bower_install','shell:font_awesome_fonts']);
+  grunt.registerTask('install', ['shell:npminstall','shell:bowerinstall','shell:fontawesomefonts']);
   
 
   grunt.registerTask('default', ['build']);
