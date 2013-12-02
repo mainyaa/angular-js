@@ -1,10 +1,10 @@
 describe "Spec: Testing Modules", ->
 
-  describe "PubNubAngularApp Module:", =>
+  describe "PubNubAngularApp Module:", ->
     module = null
-    before =>
+    before ->
       module = angular.module("PubNubAngularApp")
-    it "should be registered", =>
+    it "should be registered", ->
       expect(module).not.to.equal(null)
 
     deps = null
