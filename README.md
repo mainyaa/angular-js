@@ -18,3 +18,7 @@ WIP
 1. `gem install berkshelf`
 1. `berks install`
 1. `vagrant up`
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mainyaa/pubnub-angular-js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
