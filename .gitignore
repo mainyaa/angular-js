@@ -3,6 +3,7 @@
 .tmp
 app/components
 dist/components
+dist
 
 ### /.gitignore-boilerplates/Global/osx.gitignore
 
