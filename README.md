@@ -19,6 +19,12 @@ WIP
 1. `berks install`
 1. `vagrant up`
 
+# Saucelabs (on Mac)
+1. `brew tap phinze/cask`
+1. `brew install brew-cask`
+1. `brew cask install sauce`
+1. `open ~/Applications/Sauce.app`
+1. `grunt test`
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mainyaa/pubnub-angular-js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

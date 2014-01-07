@@ -2,7 +2,9 @@
   "name": "pubnub-angular-app",
   "version": "0.0.0",
   "dependencies": {
-    "grunt-karma": "~0.6.1"
+    "grunt-karma": "~0.6.1",
+    "grunt-saucelabs": "~4.1.2",
+    "karma-sauce-launcher": "~0.1.7"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -31,7 +33,7 @@
     "grunt-google-cdn": "~0.1.1",
     "grunt-ngmin": "~0.0.2",
     "grunt-haml": "~0.5.0",
-    "karma-mocha": "latest",
+    "karma-mocha": "~0.1.1",
     "chai": "1.4.0",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-ng-scenario": "~0.1.0",
@@ -44,7 +46,18 @@
     "karma-chrome-launcher": "~0.1.0",
     "karma-safari-launcher": "latest",
     "karma-firefox-launcher": "~0.1.0",
-    "grunt-bower-task": "~0.3.4"
+    "grunt-bower-task": "~0.3.4",
+    "type-detect": "~0.1.2",
+    "karma": "~0.10.8",
+    "coveralls": "~2.5.0",
+    "jscoverage": "~0.3.8",
+    "karma-sauce-launcher": "~0.1.5",
+    "mocha-lcov-reporter": "0.0.1",
+    "mocha": "~1.15.1",
+    "karma-chai": "0.0.2",
+    "karma-sinon-chai": "~0.1.1",
+    "grunt-jscoverage": "0.0.3",
+    "grunt-mocha-cov": "~0.1.0"
   },
   "engines": {
     "node": ">=0.8.0"

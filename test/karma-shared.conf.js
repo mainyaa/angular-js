@@ -3,8 +3,23 @@ module.exports = function() {
     basePath: '../',
     frameworks: ['mocha'],
     reporters: ['progress'],
-    browsers: ['Chrome'],
     autoWatch: true,
+    sauceLabs: {
+      username: 'mainya',
+      accessKey: '740cc4b3-0716-44e3-85d9-63c425f08b24',
+      startConnect: true,
+      testName: 'pubnub-angular-js'
+    },
+
+    // define SL browsers
+    customLaunchers: {
+      sl_chrome_linux: {
+        base: 'SauceLabs',
+        browserName: 'chrome',
+        platform: 'linux'
+      }
+    },
+    browsers: ['sl_chrome_linux'],
 
     // these are default values anyway
     singleRun: false,
