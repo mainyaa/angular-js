@@ -5,8 +5,8 @@ module.exports = function() {
     reporters: ['progress'],
     autoWatch: true,
     sauceLabs: {
-      username: 'mainya',
-      accessKey: '740cc4b3-0716-44e3-85d9-63c425f08b24',
+      username: 'pubnub-angular-js',
+      accessKey: '82349adf-b53d-455c-b514-9a455f027d5b',
       startConnect: true,
       testName: 'pubnub-angular-js'
     },
